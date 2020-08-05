@@ -1,3 +1,5 @@
+//* Confirm that all of this matches up to our new database
+
 "use strict";
 
 var fs = require("fs");

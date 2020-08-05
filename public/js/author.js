@@ -1,3 +1,6 @@
+//* If the book isn't already in the db, have function to add new book (post route) ?(optional)
+//* No need write function to delete or update
+
 $(document).ready(function() {
   // Getting references to the name input and author container, as well as the table body
   var nameInput = $("#author-name");
@@ -32,6 +35,7 @@ $(document).ready(function() {
       .then(getAuthors);
   }
 
+  //*if user can search by author, will need row of authors
   // Function for creating a new list row for authors
   function createAuthorRow(authorData) {
     var newTr = $("<tr>");
@@ -42,12 +46,14 @@ $(document).ready(function() {
     } else {
       newTr.append("<td>0</td>");
     }
+    //* change these links to go to Author's books and back to the homepage, get rid of 'delete' link
     newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
     newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
     return newTr;
   }
 
+  //* need code from here to line 86
   // Function for retrieving authors and getting them ready to be rendered to the page
   function getAuthors() {
     $.get("/api/authors", function(data) {
@@ -81,6 +87,7 @@ $(document).ready(function() {
     authorContainer.append(alertDiv);
   }
 
+  //*get rid of this ('destroy' it)
   // Function for handling what happens when the delete button is pressed
   function handleDeleteButtonPress() {
     var listItemData = $(this).parent("td").parent("tr").data("author");

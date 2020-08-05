@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Author = sequelize.define("Author", {
-    // Giving the Author model a name of type STRING
+    // Giving the Book model a name of type STRING
     name: DataTypes.STRING
   });
 
@@ -14,3 +14,9 @@ module.exports = function(sequelize, DataTypes) {
 
   return Author;
 };
+
+
+//* Exporting the Author function, Author refers to who wrote the Post, not who wrote the book. Will need to change that path
+//* Create tables called Books, Author, 
+//* Books table has genre column, title, author
+//* Author table has name
