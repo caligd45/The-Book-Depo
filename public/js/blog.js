@@ -1,3 +1,5 @@
+//* Change this code to get books
+
 $(document).ready(function() {
   /* global moment */
 
@@ -23,7 +25,7 @@ $(document).ready(function() {
     getPosts();
   }
 
-
+  //* getBooks instead of getPosts
   // This function grabs posts from the database and updates the view
   function getPosts(author) {
     authorId = author || "";
@@ -42,6 +44,7 @@ $(document).ready(function() {
     });
   }
 
+  //* Will not need to delete books
   // This function does an API call to delete posts
   function deletePost(id) {
     $.ajax({
@@ -63,6 +66,7 @@ $(document).ready(function() {
     blogContainer.append(postsToAdd);
   }
 
+  //* Alter this to create new book card ?
   // This function constructs a post's HTML
   function createNewRow(post) {
     var formattedDate = new Date(post.createdAt);
@@ -105,6 +109,7 @@ $(document).ready(function() {
     return newPostCard;
   }
 
+  //* don't need to delete
   // This function figures out which post we want to delete and then calls deletePost
   function handlePostDelete() {
     var currentPost = $(this)
@@ -114,6 +119,7 @@ $(document).ready(function() {
     deletePost(currentPost.id);
   }
 
+  //* don't need to edit
   // This function figures out which post we want to edit and takes it to the appropriate url
   function handlePostEdit() {
     var currentPost = $(this)
@@ -123,6 +129,7 @@ $(document).ready(function() {
     window.location.href = "/cms?post_id=" + currentPost.id;
   }
 
+  //*Change this to be a 'book not found' message
   // This function displays a message when there are no posts
   function displayEmpty(id) {
     var query = window.location.search;

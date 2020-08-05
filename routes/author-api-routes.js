@@ -43,3 +43,7 @@ module.exports = function(app) {
   });
 
 };
+
+
+// * Make sure we're using the same verbiage within functions between back end and front end
+// * Change name of this file to book-api-routes
