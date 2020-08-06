@@ -1,5 +1,7 @@
 
 
+
+
 .nav-wrapper {
     background-color: #EDAA4E;
     font-family: 'Permanent Marker', cursive;
@@ -8,7 +10,21 @@
 .search {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
-    font-size: 20; 
+    font-size: 20px;
+    color: white;
+    
+}
+
+::placeholder {
+    color: white;
+}
+
+:-ms-input-place {
+    color: white;
+}
+
+::-ms-input-place {
+    color: white;
 }
 
 .card {
