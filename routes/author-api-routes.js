@@ -1,5 +1,7 @@
 var { Author } = require("../models");
 
+// Routes
+// =============================================================
 module.exports = function(app) {
   app.get("/api/author", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
