@@ -1,27 +1,25 @@
 {
-  "name": "post-author-joins",
+  "name": "book-depo",
   "version": "1.0.0",
-  "description": "",
+  "description": "group project 2",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "eslint": "^7.6.0",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "mysql2": "^1.6.4",
-    "sequelize": "^4.44.4"
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caligd45/The-Book-Depo.git"
   },
+  "author": "Collaberation",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/caligd45/The-Book-Depo/issues"
   },
