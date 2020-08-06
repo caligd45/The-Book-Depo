@@ -9,7 +9,7 @@ $(document).ready(function() {
   // Adding event listeners to the form to create a new object, and the button to delete
   // an Author
   $(document).on("submit", "#author-form", handleAuthorFormSubmit);
-  $(document).on("click", ".delete-author", handleDeleteButtonPress);
+  //$(document).on("click", ".delete-author", handleDeleteButtonPress);
 
   // Getting the initial list of Authors
   getAuthors();
@@ -41,15 +41,15 @@ $(document).ready(function() {
     var newTr = $("<tr>");
     newTr.data("author", authorData);
     newTr.append("<td>" + authorData.name + "</td>");
-    if (authorData.Posts) {
-      newTr.append("<td> " + authorData.Posts.length + "</td>");
+    if (authorData.Book) {
+      newTr.append("<td> " + authorData.Book.length + "</td>");
     } else {
       newTr.append("<td>0</td>");
     }
     //* change these links to go to Author's books and back to the homepage, get rid of 'delete' link
-    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Books</a></td>");
+    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Return to Home Page</a></td>");
+    //newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
     return newTr;
   }
 
@@ -80,22 +80,22 @@ $(document).ready(function() {
   }
 
   // Function for handling what to render when there are no authors
-  function renderEmpty() {
-    var alertDiv = $("<div>");
-    alertDiv.addClass("alert alert-danger");
-    alertDiv.text("You must create an Author before you can create a Post.");
-    authorContainer.append(alertDiv);
-  }
+  // function renderEmpty() {
+  //   var alertDiv = $("<div>");
+  //   alertDiv.addClass("alert alert-danger");
+  //   alertDiv.text("You must create an Author before you can create a Post.");
+  //   authorContainer.append(alertDiv);
+  // }
 
   //*get rid of this ('destroy' it)
   // Function for handling what happens when the delete button is pressed
-  function handleDeleteButtonPress() {
-    var listItemData = $(this).parent("td").parent("tr").data("author");
-    var id = listItemData.id;
-    $.ajax({
-      method: "DELETE",
-      url: "/api/authors/" + id
-    })
-      .then(getAuthors);
-  }
-});
+//   function handleDeleteButtonPress() {
+//     var listItemData = $(this).parent("td").parent("tr").data("author");
+//     var id = listItemData.id;
+//     $.ajax({
+//       method: "DELETE",
+//       url: "/api/authors/" + id
+//     })
+//       .then(getAuthors);
+//   }
+// });
