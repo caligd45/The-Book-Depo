@@ -18,6 +18,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Book;
 };
-
-
-//* Need to change this to associate Books to Author, Post would become Book
