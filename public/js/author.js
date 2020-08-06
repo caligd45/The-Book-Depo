@@ -78,24 +78,4 @@ $(document).ready(function() {
       renderEmpty();
     }
   }
-
-  // Function for handling what to render when there are no authors
-  // function renderEmpty() {
-  //   var alertDiv = $("<div>");
-  //   alertDiv.addClass("alert alert-danger");
-  //   alertDiv.text("You must create an Author before you can create a Post.");
-  //   authorContainer.append(alertDiv);
-  // }
-
-  //*get rid of this ('destroy' it)
-  // Function for handling what happens when the delete button is pressed
-//   function handleDeleteButtonPress() {
-//     var listItemData = $(this).parent("td").parent("tr").data("author");
-//     var id = listItemData.id;
-//     $.ajax({
-//       method: "DELETE",
-//       url: "/api/authors/" + id
-//     })
-//       .then(getAuthors);
-//   }
-// });
+});
