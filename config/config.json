@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "blogger",
+    "password": "rootroot",
+    "database": "book",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "rootroot",
     "database": "database_test",
     "host": "127.0.0.1",
     "port": 3306,
@@ -17,12 +17,10 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "rootroot",
     "database": "database_production",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   }
 }
-
-//will need to update connection info

@@ -9,47 +9,26 @@ $(document).ready(function() {
   // Adding event listeners to the form to create a new object, and the button to delete
   // an Author
   $(document).on("submit", "#author-form", handleAuthorFormSubmit);
-  $(document).on("click", ".delete-author", handleDeleteButtonPress);
+  //$(document).on("click", ".delete-author", handleDeleteButtonPress);
 
   // Getting the initial list of Authors
   getAuthors();
 
-  // A function to handle what happens when the form is submitted to create a new Author
-  function handleAuthorFormSubmit(event) {
-    event.preventDefault();
-    // Don't do anything if the name fields hasn't been filled out
-    if (!nameInput.val().trim().trim()) {
-      return;
-    }
-    // Calling the upsertAuthor function and passing in the value of the name input
-    upsertAuthor({
-      name: nameInput
-        .val()
-        .trim()
-    });
-  }
-
-  // A function for creating an author. Calls getAuthors upon completion
-  function upsertAuthor(authorData) {
-    $.post("/api/authors", authorData)
-      .then(getAuthors);
-  }
-
-  //*if user can search by author, will need row of authors
-  // Function for creating a new list row for authors
+  //When the user searches for an Author it creates a data row for that search request
+  
   function createAuthorRow(authorData) {
     var newTr = $("<tr>");
     newTr.data("author", authorData);
     newTr.append("<td>" + authorData.name + "</td>");
-    if (authorData.Posts) {
-      newTr.append("<td> " + authorData.Posts.length + "</td>");
+    if (authorData.Book) {
+      newTr.append("<td> " + authorData.Book.length + "</td>");
     } else {
       newTr.append("<td>0</td>");
     }
-    //* change these links to go to Author's books and back to the homepage, get rid of 'delete' link
-    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+    // This links to go back to the homepage
+    //!front end: Need to create a connection 
+    newTr.append("<td><a style='cursor:pointer;color:blue' class='return-home'>Return Home</a></td>");
+    
     return newTr;
   }
 
@@ -77,25 +56,5 @@ $(document).ready(function() {
     else {
       renderEmpty();
     }
-  }
-
-  // Function for handling what to render when there are no authors
-  function renderEmpty() {
-    var alertDiv = $("<div>");
-    alertDiv.addClass("alert alert-danger");
-    alertDiv.text("You must create an Author before you can create a Post.");
-    authorContainer.append(alertDiv);
-  }
-
-  //*get rid of this ('destroy' it)
-  // Function for handling what happens when the delete button is pressed
-  function handleDeleteButtonPress() {
-    var listItemData = $(this).parent("td").parent("tr").data("author");
-    var id = listItemData.id;
-    $.ajax({
-      method: "DELETE",
-      url: "/api/authors/" + id
-    })
-      .then(getAuthors);
   }
 });
