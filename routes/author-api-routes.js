@@ -1,19 +1,21 @@
-var { Author } = require("../models");
+var { Author, Book } = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
-  app.get("/api/author", function(req, res) {
+module.exports = (app) => {
+  app.get("/api/author", (req, res) => {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     Author.findAll({
       include: [Book]
-    }).then(function(Author) {
+    }).then((Author) => {
       res.json(Author);
-    });
+    }).catch((err) => {
+      res.json(err)
+      });
   });
 
-  app.get("/api/authors/:id", function(req, res) {
+  app.get("/api/authors/:id", (req, res) => {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
@@ -22,8 +24,10 @@ module.exports = function(app) {
         id: req.params.id
       },
       include: [Book]
-    }).then(function(Author) {
+    }).then((Author) => {
       res.json(Author);
-    });
+    }).catch((err) => {
+      res.json(err);
+      });
   });
 };
