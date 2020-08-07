@@ -24,8 +24,8 @@ $(document).ready(function() {
       newTr.append("<td>0</td>");
     }
     // This links to go back to the homepage
-    //!front end: Need to create a connection 
-    newTr.append("<td><a style='cursor:pointer;color:blue' class='return-home'>Return Home</a></td>");
+    
+    newTr.append("<td><a style='cursor:pointer;color:blue' class='home'>Home</a></td>");
     
     return newTr;
   }
