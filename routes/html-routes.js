@@ -28,6 +28,9 @@ module.exports = (app) => {
 
   app.get("/booklist", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/booklist.html"));
+    
+  //genre route loads the genre searches
+  app.get("/genre", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/genre.html"));
   });
-
 };
