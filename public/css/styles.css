@@ -37,14 +37,18 @@ header {
   font-size: x-large;
 }
 
+#dropdown1 {
+  background-color: #1C8B98;
+}
+
 .list {
   text-align: start;
   padding-left: 20px;
-  display: inline-flex;
+  display: inline;
 }
 
 .form {
-  margin: 130px 10px 0px 10px;
+  margin: 120px 10px 0px 10px;
 }
 
 .start{
