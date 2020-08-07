@@ -1,5 +1,3 @@
-//* Change this code to get books
-
 $(document).ready(function() {
   /* global moment */
 
@@ -50,7 +48,6 @@ $(document).ready(function() {
     bookContainer.append(bookToAdd);
   }
 
-  //* Alter this to create new book card ?
   // This function constructs a book's HTML
   function createNewRow(post) {
     var newBookCard = $("<div>");
@@ -60,19 +57,13 @@ $(document).ready(function() {
     var newBookTitle = $("<h2>");
     var newBookAuthor = $("<h5>");
     newBookAuthor.text("Written by: " + book.Author.name);
-    // newBookAuthor.css({
-    //   float: "right",
-    //   color: "blue",
-    //   "margin-top":
-    //   "-10px"
-    // });
     var newBookCardBody = $("<div>");
     newBookCardBody.addClass("card-body");
     var newBookBody = $("<p>");
     newBookTitle.text(book.title + " ");
     newBookBody.text(book.body);
     newBookTitle.append(newPostDate);
-        newBookCardHeading.append(newBookTitle);
+    newBookCardHeading.append(newBookTitle);
     newBookCardHeading.append(newBookAuthor);
     newBookCardBody.append(newBookBody);
     newBookCard.append(newBookCardHeading);

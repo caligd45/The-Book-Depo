@@ -1,5 +1,3 @@
-//* If the book isn't already in the db, have function to add new book (post route) ?(optional)
-//* No need write function to delete or update
 
 $(document).ready(function() {
   // Getting references to the name input and author container, as well as the table body
@@ -32,8 +30,7 @@ $(document).ready(function() {
     return newTr;
   }
 
-  //* need code from here to line 86
-  // Function for retrieving authors and getting them ready to be rendered to the page
+    // Function for retrieving authors and getting them ready to be rendered to the page
   function getAuthors() {
     $.get("/api/authors", function(data) {
       var rowsToAdd = [];
