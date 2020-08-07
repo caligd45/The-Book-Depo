@@ -1,6 +1,6 @@
-header {
 
-}
+
+
 
 .nav-wrapper {
     background-color: #EDAA4E;
@@ -10,15 +10,39 @@ header {
 .search {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
-    font-size: 20;
+    font-size: 20px;
+    color: white;
+    
+}
+
+::placeholder {
+    color: white;
+}
+
+:-ms-input-place {
+    color: white;
+}
+
+::-ms-input-place {
+    color: white;
 }
 
 .card {
    background-color: #1C8B98;
    opacity: 0.7;
    color: white;
+   margin: 30px;
    
 }
 
+.btn-small {
+    background-color: #E14B3B;
+}
 
+footer {
+    background-color: #EDAA4E;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
 
