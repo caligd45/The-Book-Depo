@@ -26,4 +26,8 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, "../public/author.html"));
   });
 
+  app.get("/booklist", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/booklist.html"));
+  });
+
 };
