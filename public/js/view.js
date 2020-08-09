@@ -15,7 +15,7 @@ if ($(".category") === "Book") {
 //search by book
 const bookSearch = () => {
 
-  $("#search-btn").on("submit", function (event) {
+  $("#searchGlass").on("click", function (event) {
     event.preventDefault();
 
     // Save the book they typed into the book-search input
@@ -35,7 +35,7 @@ const bookSearch = () => {
 
 // Search by author
 const authorSearch = () => {
-  $("#search-btn").on("submit", function () {
+  $("#searchGlass").on("click", function () {
 
     // Save the author they typed into the author-search input
     const authorSearched = $(".query").val().trim();
@@ -56,7 +56,7 @@ const authorSearch = () => {
 
 // Search by genre
 const genreSearch = () => {
-  $("#search-btn").on("submit", function () {
+  $("#searchGlass").on("click", function () {
 
     // Save the book they typed into the genre-search input
     const genreSearched = $(".query").val().trim();
