@@ -33,4 +33,5 @@ module.exports = (app) => {
   app.get("/genre", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/genre.html"));
   });
-};
+});
+}
