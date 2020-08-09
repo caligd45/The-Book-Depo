@@ -1,5 +1,5 @@
-module.exports = function(sequelize, DataTypes) {
-  var Book = sequelize.define("Book", {
+module.exports = (sequelize, DataTypes) => {
+  const Book = sequelize.define("Book", {
       title:DataTypes.STRING,
       author: DataTypes.STRING,
       genre: DataTypes.STRING,
@@ -7,8 +7,8 @@ module.exports = function(sequelize, DataTypes) {
   );
 
   Book.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    // We're saying that a book should belong to an Author
+    // A Book can't be associated without an Author
     Book.belongsTo(models.Author, {
       foreignKey: {
         allowNull: false
@@ -18,6 +18,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Book;
 };
-
-
-//* Need to change this to associate Books to Author, Post would become Book

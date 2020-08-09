@@ -1,5 +1,3 @@
-//* If the book isn't already in the db, have function to add new book (post route) ?(optional)
-//* No need write function to delete or update
 
 $(document).ready(function() {
   // Getting references to the name input and author container, as well as the table body
@@ -14,29 +12,8 @@ $(document).ready(function() {
   // Getting the initial list of Authors
   getAuthors();
 
-  // A function to handle what happens when the form is submitted to create a new Author
-  function handleAuthorFormSubmit(event) {
-    event.preventDefault();
-    // Don't do anything if the name fields hasn't been filled out
-    if (!nameInput.val().trim().trim()) {
-      return;
-    }
-    // Calling the upsertAuthor function and passing in the value of the name input
-    upsertAuthor({
-      name: nameInput
-        .val()
-        .trim()
-    });
-  }
-
-  // A function for creating an author. Calls getAuthors upon completion
-  function upsertAuthor(authorData) {
-    $.post("/api/authors", authorData)
-      .then(getAuthors);
-  }
-
-  //*if user can search by author, will need row of authors
-  // Function for creating a new list row for authors
+  //When the user searches for an Author it creates a data row for that search request
+  
   function createAuthorRow(authorData) {
     var newTr = $("<tr>");
     newTr.data("author", authorData);
@@ -46,15 +23,14 @@ $(document).ready(function() {
     } else {
       newTr.append("<td>0</td>");
     }
-    //* change these links to go to Author's books and back to the homepage, get rid of 'delete' link
-    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Books</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Return to Home Page</a></td>");
-    //newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+
+    // This links to go back to the homepage
+    newTr.append("<td><a style='cursor:pointer;color:blue' class='home'>Home</a></td>");
+    
     return newTr;
   }
 
-  //* need code from here to line 86
-  // Function for retrieving authors and getting them ready to be rendered to the page
+    // Function for retrieving authors and getting them ready to be rendered to the page
   function getAuthors() {
     $.get("/api/authors", function(data) {
       var rowsToAdd = [];
