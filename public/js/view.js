@@ -1,78 +1,84 @@
-
+//Initialization
+M.AutoInit();
 // Function Calls 
 $('select').formSelect();
-// instance.getSelectedValues();
 
-if ($(".category") === "Book") {
-  bookSearch();
-} else if ($(".category") === "Author") {
-  authorSearch();
-} else {
-  genreSearch();
-}
+
+// if ($(".category") === "Book") {
+//   bookSearch();
+//   console.log("search")
+// } else if ($(".category") === "Author") {
+//   authorSearch();
+// } else {
+//   genreSearch();
+// }
 
 // Functions 
 //search by book
+
+  
 const bookSearch = () => {
 
-  $("#searchGlass").on("click", function (event) {
     event.preventDefault();
+    console.log("clicked");
 
     // Save the book they typed into the book-search input
     const bookSearched = $(".query").val().trim();
+    console.log(bookSearched);
 
     // Make an AJAX get request to our api, including the user's book in the url
     $.get("/api/" + bookSearched, function (data) {
-
       console.log(data);
+
       // Call our renderBooks function to add our books to the page
       renderBook(data);
 
     });
 
-  });
-}
+  };
+
+  $("#submitBtn").on("click", bookSearch);
 
 // Search by author
-const authorSearch = () => {
-  $("#searchGlass").on("click", function () {
+// const authorSearch = () => {
+//   $("#searchGlass").on("click", function () {
 
-    // Save the author they typed into the author-search input
-    const authorSearched = $(".query").val().trim();
+//     // Save the author they typed into the author-search input
+//     const authorSearched = $(".query").val().trim();
 
-    // Make an AJAX get request to our api, including the user's author in the url
-    $.get("/api/author/" + authorSearched, function (data) {
+//     // Make an AJAX get request to our api, including the user's author in the url
+//     $.get("/api/author/" + authorSearched, function (data) {
 
-      // Log the data to the console
-      console.log(data);
-      // Call our renderBooks function to add our books to the page
-      renderBook(data);
+//       // Log the data to the console
+//       console.log(data);
+//       // Call our renderBooks function to add our books to the page
+//       renderBook(data);
 
-    });
+//     });
 
-  });
+//   });
 
-}
+// }
 
-// Search by genre
-const genreSearch = () => {
-  $("#searchGlass").on("click", function () {
+// // Search by genre
+// const genreSearch = () => {
+//   $("#searchGlass").on("click", function () {
 
-    // Save the book they typed into the genre-search input
-    const genreSearched = $(".query").val().trim();
+//     // Save the book they typed into the genre-search input
+//     const genreSearched = $(".query").val().trim();
 
-    // Make an AJAX get request to our api, including the user's genre in the url
-    $.get("/api/genre/" + genreSearched, function (data) {
+//     // Make an AJAX get request to our api, including the user's genre in the url
+//     $.get("/api/genre/" + genreSearched, function (data) {
 
-      console.log(data);
-      // Call our renderBooks function to add our books to the page
-      renderBook(data);
+//       console.log(data);
+//       // Call our renderBooks function to add our books to the page
+//       renderBook(data);
 
-    });
+//     });
 
-  });
+//   });
 
-}
+// }
 
 function renderBook(data) {
   if (data.length !== 0) {
