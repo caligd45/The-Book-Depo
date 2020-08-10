@@ -14,6 +14,7 @@ var { Book }= require("../models");
   
     // Get a specific book
     app.get("/api/:book", (req, res) => {
+      console.log("hit")
       Book.findAll({
         where: {
           title: req.params.book
