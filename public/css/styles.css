@@ -1,4 +1,5 @@
 body {
+  background-attachment: fixed;
   background-image: url("../images/bookshelf.png");
   background-size: cover;
   background-position: top;
@@ -39,8 +40,8 @@ nav {
   background-color: #1C8B98;
 }
 
-#searchGlass {
-  cursor: pointer;
+.imgOfBook {
+  height:auto;
 }
 
 
