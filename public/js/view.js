@@ -1,78 +1,83 @@
-
+//Initialization
+M.AutoInit();
 // Function Calls 
 $('select').formSelect();
-// instance.getSelectedValues();
 
-if ($(".category") === "Book") {
-  bookSearch();
-} else if ($(".category") === "Author") {
-  authorSearch();
-} else {
-  genreSearch();
-}
+
+// if ($(".category") === "Book") {
+//   bookSearch();
+//   console.log("search")
+// } else if ($(".category") === "Author") {
+//   authorSearch();
+// } else {
+//   genreSearch();
+// }
 
 // Functions 
 //search by book
+
+  
 const bookSearch = () => {
 
-  $("#search-btn").on("submit", function (event) {
     event.preventDefault();
+    console.log("clicked");
 
     // Save the book they typed into the book-search input
     const bookSearched = $(".query").val().trim();
+    console.log(bookSearched);
 
     // Make an AJAX get request to our api, including the user's book in the url
     $.get("/api/" + bookSearched, function (data) {
-
       console.log(data);
+
       // Call our renderBooks function to add our books to the page
       renderBook(data);
 
     });
 
-  });
-}
+  };
 
-// Search by author
-const authorSearch = () => {
-  $("#search-btn").on("submit", function () {
+  $("#submitBtn").on("click", bookSearch);
 
-    // Save the author they typed into the author-search input
-    const authorSearched = $(".query").val().trim();
+// // Search by author
+// const authorSearch = () => {
+//   $("#searchGlass").on("click", function () {
 
-    // Make an AJAX get request to our api, including the user's author in the url
-    $.get("/api/author/" + authorSearched, function (data) {
+//     // Save the author they typed into the author-search input
+//     const authorSearched = $(".query").val().trim();
 
-      // Log the data to the console
-      console.log(data);
-      // Call our renderBooks function to add our books to the page
-      renderBook(data);
+//     // Make an AJAX get request to our api, including the user's author in the url
+//     $.get("/api/author/" + authorSearched, function (data) {
 
-    });
+//       // Log the data to the console
+//       console.log(data);
+//       // Call our renderBooks function to add our books to the page
+//       renderBook(data);
 
-  });
+//     });
 
-}
+//   });
 
-// Search by genre
-const genreSearch = () => {
-  $("#search-btn").on("submit", function () {
+// }
 
-    // Save the book they typed into the genre-search input
-    const genreSearched = $(".query").val().trim();
+// // Search by genre
+// const genreSearch = () => {
+//   $("#searchGlass").on("click", function () {
 
-    // Make an AJAX get request to our api, including the user's genre in the url
-    $.get("/api/genre/" + genreSearched, function (data) {
+//     // Save the book they typed into the genre-search input
+//     const genreSearched = $(".query").val().trim();
 
-      console.log(data);
-      // Call our renderBooks function to add our books to the page
-      renderBook(data);
+//     // Make an AJAX get request to our api, including the user's genre in the url
+//     $.get("/api/genre/" + genreSearched, function (data) {
 
-    });
+//       console.log(data);
+//       // Call our renderBooks function to add our books to the page
+//       renderBook(data);
 
-  });
+//     });
 
-}
+//   });
+// }
 
 function renderBook(data) {
   if (data.length !== 0) {

@@ -41,6 +41,11 @@ header {
   background-color: #1C8B98;
 }
 
+#searchGlass {
+  cursor: pointer;
+}
+
+
 .list {
   text-align: start;
   padding-left: 20px;
