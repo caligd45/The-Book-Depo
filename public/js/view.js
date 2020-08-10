@@ -25,8 +25,6 @@ const bookSearch = () => {
 
   $("#submitBtn").on("click", bookSearch);
 
-
-
 function renderBook(data) {
   if (data.length !== 0) {
 
