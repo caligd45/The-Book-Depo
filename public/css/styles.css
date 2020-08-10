@@ -31,18 +31,12 @@ nav {
   position: relative;
   border: solid #E14B3B 8px;
   color: black;
-  text-align: center;
   font-size: x-large;
 }
 
-#dropdown1 {
-  background-color: #1C8B98;
+.topFiveTitle{
+  text-align: center;
 }
-
-#searchGlass {
-  cursor: pointer;
-}
-
 
 .list {
   text-align: start;
