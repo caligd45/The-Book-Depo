@@ -21,7 +21,7 @@ nav {
 }
 
 .welcome {
-  margin-top: 0px;
+  margin-top: 100px;
 }
 
 .searchArea,
@@ -40,8 +40,23 @@ nav {
   background-color: #1C8B98;
 }
 
-.imgOfBook {
-  height:auto;
+.bookCard {
+  background-color:	#e8f5f8;
+  border: #1C8B98 solid 3px;
+  text-align: center;
+}
+
+.card-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+}
+
+.card-image {
+  width: 180px !important;
+}
+
+.author {
+  font-style: cursive;
 }
 
 .list {
