@@ -9,18 +9,16 @@ body {
 nav {
   background-color: #EDAA4E;
   color: black !important;
+  font-family: 'Permanent Marker', cursive;
+  padding-left: 20px;
 }
 
-header {
-  color: black;
-}
 
 .wrapper {
   margin-top: 200px;
 }
 
 .welcome {
-  padding-top: 200px;
   margin-top: 0px;
 }
 
