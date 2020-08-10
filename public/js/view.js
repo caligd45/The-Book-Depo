@@ -39,7 +39,7 @@ const bookSearch = () => {
 
   $("#submitBtn").on("click", bookSearch);
 
-// Search by author
+// // Search by author
 // const authorSearch = () => {
 //   $("#searchGlass").on("click", function () {
 
@@ -77,7 +77,6 @@ const bookSearch = () => {
 //     });
 
 //   });
-
 // }
 
 function renderBook(data) {
