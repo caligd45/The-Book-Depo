@@ -12,6 +12,7 @@ nav {
   color: black !important;
   font-family: 'Permanent Marker', cursive;
   padding-left: 20px;
+  margin-top: 10px;
 }
 
 
@@ -32,7 +33,6 @@ nav {
   position: relative;
   border: solid #E14B3B 8px;
   color: black;
-  text-align: center;
   font-size: x-large;
 }
 
@@ -58,7 +58,6 @@ nav {
 .author {
   font-style: cursive;
 }
-
 
 .list {
   text-align: start;
