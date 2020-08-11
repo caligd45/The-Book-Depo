@@ -1,5 +1,15 @@
 const bookSearched = $("#search-btn").val().trim();
 
+function autocomplete() {
+  const autocompleteBooks = [
+    "blood meridian",
+    "the zombie survival guide",
+    "lady chatterley's lover"
+]
+  $("#search-btn").autocomplete({
+    source: autocompleteBooks
+  })
+}
 
 //Functions
 function initializeRows() {
@@ -37,11 +47,13 @@ const bookList = () => {
 
 const onLoad = () => {
   $("#bookList").hide();
+  autocomplete()
 }
 
 //Function calls
 onLoad();
 $(".saveBook").on("click", saveBook);
 $("#bookListLink").on("click", bookList);
+
 
 
