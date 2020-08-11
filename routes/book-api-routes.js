@@ -51,4 +51,13 @@ var { Book }= require("../models");
         res.json(err);
         });
     });  
+
+    app.post("/api/booklist", function (req,res) {
+
+        BookList.create(req.body)
+        .then(book => {
+          res.json(book)
+        })
+
+    })
   };
