@@ -22,22 +22,21 @@ function saveBook (event) {
 
 const bookList = () => {
   $(".topFive").hide();
-  $("#booklist").show();
-
+  $("#bookList").attr("style","display:block");
+  
     // Make an AJAX get request to our api, including the user's book in the url
-  $.get("/api/" + bookSearched, function (data) {
-    console.log(data);
+//   $.get("/api/" + bookSearched, function (data) {
+//     console.log(data);
 
-    books = data
-    initializeRows();
-    //$("#booklist").show();
+//     books = data
+//     initializeRows();
 
-});
+// });
 }
 
 const onLoad = () => {
   $("#bookList").hide();
-  autoComplete();
+  
 }
 
 //Function calls
