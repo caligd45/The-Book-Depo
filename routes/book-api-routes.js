@@ -54,11 +54,11 @@ var { Book }= require("../models");
 
     app.post("/api/new", (req,res)=> {
       console.log("Book Data:");
-      console.log (req.body);
+      console.log (req.book);
       Book.create({
-        title: req.body.title,
-        author: req.body.author,
-        genre: req.body.genre
+        title: req.book.title,
+        author: req.book.author,
+        genre: req.book.genre
       }).then((results)=>{
         res.json(results);
         res.end();

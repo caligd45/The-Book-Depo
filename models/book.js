@@ -1,15 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Book = sequelize.define("Book", {
-      title:DataTypes.STRING,
-      author: DataTypes.STRING,
-      genre: DataTypes.STRING,
+    title:DataTypes.STRING,
+    author: DataTypes.STRING,
+    genre: DataTypes.STRING,
     },
   );
-
-  Book.associate = function(models) {
-    // We're saying that a book should belong to an Author
-    // A Book can't be associated without an Author
-    Book.belongsTo(models.Author, {
+  Book.push = function(models) {
+   
+    Book.belongsTo(models.Book, {
       foreignKey: {
         allowNull: false
       }
@@ -17,4 +15,5 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return Book;
+ // Book.sync();
 };
