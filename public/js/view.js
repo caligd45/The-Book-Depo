@@ -11,15 +11,6 @@ function initializeRows() {
   $("#bookList").prepend(rowsToAdd);
 }
 
-function saveBook (event) {
-  event.preventDefault();
-  const bookToSave = $(this).parents(".card").data();
-
-  $.post("/api/booklist/" + bookToSave);
-  console.log("book saved");
-  
-}
-
 const bookList = () => {
   $(".topFive").hide();
   $("#bookList").attr("style","display:block");
@@ -41,7 +32,6 @@ const onLoad = () => {
 
 //Function calls
 onLoad();
-$(".saveBook").on("click", saveBook);
 $("#bookListLink").on("click", bookList);
 
 

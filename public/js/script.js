@@ -43,7 +43,7 @@ $(document).ready(() => {
                 const bookImage = $(`<img class='imgOfbook' src=''/>`);
                 const desDiv = $("<div class='card-content'>");
                 const description = $(`<p> ${res.description}</p>`);
-                const saveBtn = $("<a class='waves-effect waves-light btn-small saveBook'>Save This Book</a>")
+                const saveBtn = $("<a id='saveBtn' class='saveBook waves-effect waves-light btn-small'>Save This Book</a>")
 
                 if (!res.imageLinks.thumbnail) {
                     imgSrc = "./images/defaultBook.png"
@@ -68,4 +68,14 @@ $(document).ready(() => {
             }
         }
     };
+
+
+    $(document).on("click", ".saveBook", function() {
+        
+        console.log("book saved");
+        
+        const bookToSave = $(this).parents(".card").data();
+      
+        $.post("/api/booklist/" + bookToSave);
+    });
 })
