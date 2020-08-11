@@ -1,4 +1,5 @@
 body {
+  background-attachment: fixed;
   background-image: url("../images/bookshelf.png");
   background-size: cover;
   background-position: top;
@@ -11,6 +12,7 @@ nav {
   color: black !important;
   font-family: 'Permanent Marker', cursive;
   padding-left: 20px;
+  margin-top: 10px;
 }
 
 
@@ -19,7 +21,7 @@ nav {
 }
 
 .welcome {
-  margin-top: 0px;
+  margin-top: 100px;
 }
 
 .searchArea,
@@ -31,7 +33,6 @@ nav {
   position: relative;
   border: solid #E14B3B 8px;
   color: black;
-  text-align: center;
   font-size: x-large;
 }
 
@@ -39,10 +40,24 @@ nav {
   background-color: #1C8B98;
 }
 
-#searchGlass {
-  cursor: pointer;
+.bookCard {
+  background-color:	#e8f5f8;
+  border: #1C8B98 solid 3px;
+  text-align: center;
 }
 
+.card-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+}
+
+.card-image {
+  width: 180px !important;
+}
+
+.author {
+  font-style: cursive;
+}
 
 .list {
   text-align: start;

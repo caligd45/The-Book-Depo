@@ -52,6 +52,7 @@ var { Book }= require("../models");
         });
     });  
 
+<<<<<<< HEAD
     app.post("/api/new", (req,res)=> {
       console.log("Book Data:");
       console.log (req.book);
@@ -65,4 +66,14 @@ var { Book }= require("../models");
       })
     })
 
+=======
+    app.post("/api/booklist", function (req,res) {
+
+        BookList.create(req.body)
+        .then(book => {
+          res.json(book)
+        })
+
+    })
+>>>>>>> master
   };
