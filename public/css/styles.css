@@ -21,11 +21,13 @@ nav {
 }
 
 .welcome {
+  font-family: 'Gentium Book Basic', serif;
   margin-top: 100px;
 }
 
 .searchArea,
-.topFive {
+.topFive,
+#bookList {
   background-color: white;
   background-size: cover;
   background-position: bottom;
@@ -43,6 +45,7 @@ nav {
 .bookCard {
   background-color:	#e8f5f8;
   border: #1C8B98 solid 3px;
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
 }
 
@@ -60,9 +63,15 @@ nav {
 }
 
 .list {
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: start;
   padding-left: 20px;
   display: inline;
+}
+
+.topFiveTitle,
+.searchTitle {
+  font-family: 'Gentium Book Basic', serif;
 }
 
 .form {

@@ -37,6 +37,7 @@ const bookList = () => {
 
 const onLoad = () => {
   $("#bookList").hide();
+  autoComplete();
 }
 
 //Function calls
