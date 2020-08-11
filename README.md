@@ -16,7 +16,7 @@ No installation is necessary to run this app.
 
 ## Usage
 Navigate to deployed link, click on the line in the Search box to enter a book title. Enter the title and either click on Search or hit Enter. To save the book, simply click on the Save This Book button. To see your Book List, click on the link in the top right "See Your Book List"
-![The Book Depot](https://limitless-lowlands-86248.herokuapp.com/)
+[The Book Depot](https://limitless-lowlands-86248.herokuapp.com/)
 
 ## Credits
 Sam Morris, Greg Doyle, Shelby Handfield, Nikki Castle
