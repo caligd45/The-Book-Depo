@@ -25,7 +25,7 @@ Sam Morris, Greg Doyle, Shelby Handfield, Nikki Castle
 GNU General Public License v3
 
 ## Contributing
-If contributing to this project, please follwo the Contributer Covenant guidelines. 
+If contributing to this project, please follow the Contributor Covenant guidelines. 
 
 ## Questions?
 Please email any questions to [ncastledeveloper@gmail.com](mailto:ncastledeveloper@gmail.com) or find the repo on Github [caligd45](https://github.com/caligd45/The-Book-Depo).
