@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "madworldTSP100",
+    "password": "root",
     "database": "book",
     "host": "127.0.0.1",
     "port": 8889,
@@ -21,6 +21,7 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "port": 3306,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
   }
 }
