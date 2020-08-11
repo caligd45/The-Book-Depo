@@ -1,25 +1,46 @@
-//Initialization
-M.AutoInit();
-// Function Calls 
-$('select').formSelect();
+const bookSearched = $("#search-btn").val().trim();
 
-const bookSearch = () => {
 
+//Functions
+function initializeRows() {
+  $("#bookList").empty();
+  var rowsToAdd = [];
+  for (var i = 0; i < books.length; i++) {
+    rowsToAdd.push(createNewRow(books[i]));
+  }
+  $("#bookList").prepend(rowsToAdd);
+}
+
+function saveBook (event) {
   event.preventDefault();
+  const bookToSave = $(this).parents(".card").data();
 
-  // Save the book they typed into the book-search input
-  const bookSearched = $(".query").val().trim();
-  console.log(bookSearched);
+  $.post("/api/booklist/" + bookToSave);
+  console.log("book saved");
+  
+}
 
-  // Make an AJAX get request to our api, including the user's book in the url
+const bookList = () => {
+  $(".topFive").hide();
+
+    // Make an AJAX get request to our api, including the user's book in the url
   $.get("/api/" + bookSearched, function (data) {
     console.log(data);
 
+    books = data
+    initializeRows();
+    $("#booklist").show();
 
-  });
-};
+});
+}
 
-$("#submitBtn").on("click", bookSearch);
+const onLoad = () => {
+  $("#bookList").hide();
+}
 
+//Function calls
+onLoad();
+$(".saveBook").on("click", saveBook);
+$("#bookListLink").on("click", bookList);
 
 
