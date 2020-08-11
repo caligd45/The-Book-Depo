@@ -29,7 +29,10 @@
 		<nav>
 			<div class="nav-wrapper">
 				<a href="main.html" class="brand-logo">The Book Depot</a>
-			</div> 
+				<ul id="bookListLink" class="right hide-on-med-and-down">
+					<li><a href="#bookList">See Your Book List</a></li>
+				</ul>
+			</div>
 		</nav>
 	</header>
 	<div class="wrapper">
@@ -38,19 +41,21 @@
 				<!-- search panel -->
 				<div class="card large searchArea">
 					<!-- Card Content -->
-					<p>Search here for a book!</p>
-			
+					<p>Search here for a book</p>
 					<form class="form">
-						<div class="input-field">	
+						<div class="input-field">
 							<input id="search-btn" class="query" type="text" required>
+<<<<<<< HEAD
 							<!-- <label class="label-icon grey-text hoverable" for="search">click here to search</label> -->
 							<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">Search
 							</button>	
+=======
+>>>>>>> master
 						</div>
+						<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">Search
+							<i class="material-icons right">search</i>
+						</button>
 					</form>
-					<button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">Search
-						<i class="material-icons right">search</i>
-					</button>
 				</div>
 			</div>
 			<div class="col s12 m4 l6">
@@ -64,7 +69,12 @@
 				<!-- Grey top 5 panel -->
 				<div class="card medium topFive">
 					<!-- Card Content -->
+<<<<<<< HEAD
 					<div class="topFiveTitle">Top five books of the day</div>
+=======
+					<div class="topFiveTitle">Staff Picks</div>
+					
+>>>>>>> master
 					<ul>
 						<li class="list">1. </li>
 						<br>
@@ -72,10 +82,14 @@
 						<br>
 						<li class="list">3. </li>
 						<br>
-						<li class="list">4. </li>
+						<li class="list">4. Title: American Dirt, Author: Jeanine Cummins, Genre: Fiction  </li>
 						<br>
 						<li class="list">5. </li>
 					</ul>
+				</div>
+				<div class="card medium" id="bookList" display="none">
+
+
 				</div>
 			</div>
 		</div>
