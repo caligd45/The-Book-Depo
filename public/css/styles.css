@@ -31,6 +31,7 @@ nav {
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  font-family: 'Gentium Book Basic', serif;
   position: relative;
   border: solid #E14B3B 8px;
   color: black;
@@ -66,11 +67,6 @@ nav {
   text-align: start;
   padding-left: 20px;
   display: inline;
-}
-
-.topFiveTitle,
-.searchTitle {
-  font-family: 'Gentium Book Basic', serif;
 }
 
 .form {
