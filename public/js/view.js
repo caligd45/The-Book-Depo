@@ -22,6 +22,7 @@ function saveBook (event) {
 
 const bookList = () => {
   $(".topFive").hide();
+  $("#booklist").show();
 
     // Make an AJAX get request to our api, including the user's book in the url
   $.get("/api/" + bookSearched, function (data) {
@@ -29,7 +30,7 @@ const bookList = () => {
 
     books = data
     initializeRows();
-    $("#booklist").show();
+    //$("#booklist").show();
 
 });
 }
