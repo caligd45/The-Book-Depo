@@ -16,11 +16,20 @@ $(document).ready(() => {
             url: `https://www.googleapis.com/books/v1/volumes?q=${searchValue}`,
             dataType: "json"
         }).then((response) => {
-            console.log(response);
+            // console.log(response);
             renderBook(response);
         });
     }
-
+    function saveBook(bookToSave){
+        $.ajax({
+            type: "GET",
+            url: `https://www.googleapis.com/books/v1/volumes?q=${bookToSave}`,
+            dataType: "json"
+        }).then((response) => {
+            console.log(response);
+            bookList(response);
+        });
+    }
 
     function renderBook(data) {
         if (data.length !== 0) {
@@ -28,7 +37,7 @@ $(document).ready(() => {
             $("#stats").empty();
             $("#stats").show();
 
-            console.log(data.items[0].volumeInfo.title);
+            // console.log(data.items[0].volumeInfo.title);
 
 
             for (let i = 0; i < data.items.length; i++) {
@@ -43,7 +52,7 @@ $(document).ready(() => {
                 const bookImage = $(`<img class='imgOfbook' src=''/>`);
                 const desDiv = $("<div class='card-content'>");
                 const description = $(`<p> ${res.description}</p>`);
-                const saveBtn = $("<a id='saveBtn' class='saveBook waves-effect waves-light btn-small'>Save This Book</a>")
+                const saveBtn = $(`<a data-id=${data.items[i].id} id='saveBtn' class='saveBook waves-effect waves-light btn-small'>Save This Book</a>`)
 
                 if (!res.imageLinks.thumbnail) {
                     imgSrc = "./images/defaultBook.png"
@@ -69,13 +78,27 @@ $(document).ready(() => {
         }
     };
 
+    function bookList(data) {
+        const res = data.items[0].volumeInfo
+
+        const book = $("<div>")
+        const bookInfo = $(`<p> ${res.title} By ${res.authors[0]}</p>`)
+    
+        book.append(bookInfo);
+
+        $("#bookList").append(book);
+    }
+
+    
+
 
     $(document).on("click", ".saveBook", function() {
         
         console.log("book saved");
         
-        const bookToSave = $(this).parents(".card").data();
-      
-        $.post("/api/booklist/" + bookToSave);
+        const bookToSave = $(this).attr("data-id");
+        console.log(bookToSave);
+
+        saveBook(bookToSave);
     });
 })
